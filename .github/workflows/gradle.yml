@@ -32,7 +32,8 @@ jobs:
       with:
         name: test_results
         path: "**/build/test-results/test/*.xml"
-    - name: Publish Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v1
+    - name: Test Summary
+      uses: test-summary/action@v2
       with:
-        files: '**/build/test-results/test/*.xml'
+        paths:  "**/build/test-results/test/*.xml"
+      if: always()
