@@ -28,3 +28,7 @@ jobs:
         distribution: 'temurin'
     - name: Execute tests with Gradle
       run: ./gradlew test
+    - uses: actions/upload-artifact@v3
+      with:
+        name: test_results
+        path: "*.xml"
